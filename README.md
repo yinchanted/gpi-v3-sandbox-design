@@ -11,8 +11,12 @@ Only if uetr in the request is "97ed4827-7b6f-4491-a06f-b548d5a7512d"
 > response:
 ```json
 {
-  "update_payment_status_response": {
-    "network_reference": "123."
+  "payment_status_response": {
+    "network_reference": "20190808193101560-010000000020",
+    "transaction_status": {
+      "status": "ACSP",
+      "reason": "G001"
+    }
   }
 }
 ```
