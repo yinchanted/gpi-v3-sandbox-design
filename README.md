@@ -302,94 +302,103 @@ Only if uetr in the request is "97ed4827-7b6f-4491-a06f-b548d5a7512d"
 
 > request:
 
-Only if uetr in the request is "97ed4827-7b6f-4491-a06f-cancelled"
+Only if uetr in the request is "97ed4827-7b6f-4491-a06f-cancelled" AND
+
+"underlying_cancellation_details": {
+"investigation_execution_status": "CNCL"
+},
 
 > response:
 ```json
 {
-"transaction_cancellation_status_request": {
-"from": "BANBUS33XXX",
-"business_service": "002",
-"uetr": "97ed4827-7b6f-4491-a06f-b548d5a7512d",
-"assignment_identification": "resolvedcase123",
-"case_identification": "123",
-"underlying_cancellation_details": {
-"investigation_execution_status": "CNCL"
-},
-"originator": "BANBUS33XXX"
+"cancel_transaction_response": {
+"network_reference": "20190522000128293-010000068667"
 }
 }
 ```
 
 > request:
 
-Only if uetr in the request is "97ed4827-7b6f-4491-a06f-pendingforward"
+Only if uetr in the request is "97ed4827-7b6f-4491-a06f-pendingforward" AND 
 
-> response:
-```json
-{
-"transaction_cancellation_status_request": {
-"from": "BANBUS33XXX",
-"business_service": "002",
-"uetr": "97ed4827-7b6f-4491-a06f-b548d5a7512d",
-"assignment_identification": "resolvedcase123",
-"case_identification": "123",
 "underlying_cancellation_details": {
 "investigation_execution_status": "PDCR",
 "investigation_execution_status_reason": {
 "pending": "PTNA"
 }
-},
-"originator": "BANBUS33XXX",
-"forwarded_to_agent": "BANCUS33XXX"
+
+> response:
+```json
+{
+"cancel_transaction_response": {
+"network_reference": "20190522000128293-010000068667"
 }
 }
 ```
 
 > request:
 
-Only if uetr in the request is "97ed4827-7b6f-4491-a06f-pendingdebitauth"
+Only if uetr in the request is "97ed4827-7b6f-4491-a06f-pendingdebitauth" AND
 
-> response:
-```json
-{
-"transaction_cancellation_status_request": {
-"from": "BANCDEFFXXX",
-"business_service": "002",
-"uetr": "46ed4827-7b6f-4491-a06f-b657d5a6411d",
-"assignment_identification": "InvRef1",
-"case_identification": "CaseXYZ",
 "underlying_cancellation_details": {
 "investigation_execution_status": "PDCR",
 "investigation_execution_status_reason": {
 "pending": "RQDA"
 }
-},
-"originator": "BANCDEFFXXX"
+
+> response:
+```json
+{
+"cancel_transaction_response": {
+"network_reference": "20190522000128293-010000068667"
 }
 }
 ```
 
 > request:
 
-Only if uetr in the request is "97ed4827-7b6f-4491-a06f-rejected"
-
-> response:
-```json
-{
-  "transaction_cancellation_status_request": {
-    "from": "BANCDEFFXXX",
-    "business_service": "002",
-    "uetr": "46ed4827-7b6f-4491-a06f-b657d5a6411d",
-    "assignment_identification": "InvRef1",
-    "case_identification": "CaseXYZ",
-    "underlying_cancellation_details": {
+Only if uetr in the request is "97ed4827-7b6f-4491-a06f-rejected" AND
+"underlying_cancellation_details": {
       "investigation_execution_status": "RJCR",
       "investigation_execution_status_reason": {
         "rejected": "NOAS"
       }
-    },
-    "originator": "BANCDEFFXXX"
-  }
+
+> response:
+```json
+{
+"cancel_transaction_response": {
+"network_reference": "20190522000128293-010000068667"
+}
+}
+```
+
+## /payments/cancellation
+
+> request:
+
+Only if uetr in the request is "97ed4827-7b6f-4491-a06f*" AND
+ "cancellation_reason_information" is "CUST"
+
+> response:
+```json
+{
+"cancel_transaction_response": {
+"network_reference": "20190522000128293-010000068667"
+}
+}
+```
+
+> request:
+
+Only if uetr in the request is "97ed4827-7b6f-4491-a06f*" AND
+ "cancellation_reason_information" is "DUPL"
+
+> response:
+```json
+{
+"cancel_transaction_response": {
+"network_reference": "20190522000128293-010000068667"
+}
 }
 ```
