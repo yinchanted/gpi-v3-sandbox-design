@@ -297,3 +297,99 @@ Only if uetr in the request is "97ed4827-7b6f-4491-a06f-b548d5a7512d"
   }
 }
 ```
+
+## /payments/cancellation/status
+
+> request:
+
+Only if uetr in the request is "97ed4827-7b6f-4491-a06f-cancelled"
+
+> response:
+```json
+{
+"transaction_cancellation_status_request": {
+"from": "BANBUS33XXX",
+"business_service": "002",
+"uetr": "97ed4827-7b6f-4491-a06f-b548d5a7512d",
+"assignment_identification": "resolvedcase123",
+"case_identification": "123",
+"underlying_cancellation_details": {
+"investigation_execution_status": "CNCL"
+},
+"originator": "BANBUS33XXX"
+}
+}
+```
+
+> request:
+
+Only if uetr in the request is "97ed4827-7b6f-4491-a06f-pendingforward"
+
+> response:
+```json
+{
+"transaction_cancellation_status_request": {
+"from": "BANBUS33XXX",
+"business_service": "002",
+"uetr": "97ed4827-7b6f-4491-a06f-b548d5a7512d",
+"assignment_identification": "resolvedcase123",
+"case_identification": "123",
+"underlying_cancellation_details": {
+"investigation_execution_status": "PDCR",
+"investigation_execution_status_reason": {
+"pending": "PTNA"
+}
+},
+"originator": "BANBUS33XXX",
+"forwarded_to_agent": "BANCUS33XXX"
+}
+}
+```
+
+> request:
+
+Only if uetr in the request is "97ed4827-7b6f-4491-a06f-pendingdebitauth"
+
+> response:
+```json
+{
+"transaction_cancellation_status_request": {
+"from": "BANCDEFFXXX",
+"business_service": "002",
+"uetr": "46ed4827-7b6f-4491-a06f-b657d5a6411d",
+"assignment_identification": "InvRef1",
+"case_identification": "CaseXYZ",
+"underlying_cancellation_details": {
+"investigation_execution_status": "PDCR",
+"investigation_execution_status_reason": {
+"pending": "RQDA"
+}
+},
+"originator": "BANCDEFFXXX"
+}
+}
+```
+
+> request:
+
+Only if uetr in the request is "97ed4827-7b6f-4491-a06f-rejected"
+
+> response:
+```json
+{
+  "transaction_cancellation_status_request": {
+    "from": "BANCDEFFXXX",
+    "business_service": "002",
+    "uetr": "46ed4827-7b6f-4491-a06f-b657d5a6411d",
+    "assignment_identification": "InvRef1",
+    "case_identification": "CaseXYZ",
+    "underlying_cancellation_details": {
+      "investigation_execution_status": "RJCR",
+      "investigation_execution_status_reason": {
+        "rejected": "NOAS"
+      }
+    },
+    "originator": "BANCDEFFXXX"
+  }
+}
+```
