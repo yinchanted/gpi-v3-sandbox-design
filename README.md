@@ -6,12 +6,19 @@ For all dynamic responses, LAU response headers will be handled by the api gatew
 ## /payments/status
 
 ### Errors on sandbox
-- [ ] invalid_request
-- [ ] missing_mandatory_field
+- [ ] invalid_request (400)
+- [ ] missing_mandatory_field (400)
+- [ ] 500, 502, 503, 504 error response at random with uetr =  522ec102-f643-4b3c-995f-d62b7a27ec96
 
 ### Errors on gateway
-- [ ] missing_headers
-- [ ] lau_error
+- [ ] missing_headers (400)
+- [ ] lau_error (400)
+- [ ] authentication_failture (401)
+- [ ] service_too_many_requests (429)
+- [ ] system_too_many_requests (429)
+
+![GitHub Logo] What's the difference between "service_too_many_requests" vs "system_too_many_requests"?
+
 
 ### Success scenarios
 
