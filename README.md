@@ -27,15 +27,15 @@ For all dynamic responses, LAU response headers will be handled by the api gatew
 :x: from
 :x: instruction_identification
 :x: confirmed_amount
-* update_payment_scenario (return error if not one of the accepted ENUM)
-* uetr (can only be from the list of acceptable UETRs)
-* payment_status->transaction_status (return response body needs to match)
+- [ ] update_payment_scenario (return error if not one of the accepted ENUM)
+- [ ] uetr (can only be from the list of acceptable UETRs)
+- [ ] payment_status->transaction_status (return response body needs to match)
 
 :question: What's the meaning of this attribute: "return"?
 
-> request:
+> Scenario 1 - ACCC
 
-Only if uetr in the request is "97ed4827-7b6f-4491-a06f-b548d5a7512d"
+Only if uetr in the request is "6c475b07-1487-46b0-839e-5b6a810e19bc"
 
 ```json
 {
@@ -43,7 +43,7 @@ Only if uetr in the request is "97ed4827-7b6f-4491-a06f-b548d5a7512d"
     "from": "BANCDEFF",
     "business_service": "001",
     "update_payment_scenario": "CCTR",
-    "uetr": "97ed4827-7b6f-4491-a06f-b548d5a7512d",
+    "uetr": "6c475b07-1487-46b0-839e-5b6a810e19bc",
     "instruction_identification": "sandbox-payments-chain-first-leg",
     "payment_status": {
       "detailed_status": {
@@ -69,14 +69,116 @@ Only if uetr in the request is "97ed4827-7b6f-4491-a06f-b548d5a7512d"
 }
 ```
 
-> response:
+response:
+
 ```json
 {
   "payment_status_response": {
-    "network_reference": "20190808193101560-010000000020",
+    "network_reference": "20190808193101560-010000000020-accc",
+    "transaction_status": {
+      "status": "ACCC"
+    }
+  }
+}
+```
+
+> Scenario 2 - ACSP
+
+Only if uetr in the request is "6c475b07-1487-46b0-839e-5b6a810e19bc"
+
+```json
+{
+  "update_payment_status_request": {
+    "from": "BANCDEFF",
+    "business_service": "001",
+    "update_payment_scenario": "CCTR",
+    "uetr": "6c475b07-1487-46b0-839e-5b6a810e19bc",
+    "instruction_identification": "sandbox-payments-chain-first-leg",
+    "payment_status": {
+      "detailed_status": {
+        "originator": "BANCDEFF",
+        "funds_available": "2018-01-01T17:00:00.000Z",
+        "transaction_status": {
+          "status": "ACSP",
+          "reason": "G001"
+        },
+        "return": false,
+        "confirmed_amount": {
+          "currency": "USD",
+          "amount": "980."
+        },
+        "charge_amount": [
+          {
+            "currency": "USD",
+            "amount": "20."
+          }
+        ]
+      }
+    }
+  }
+}
+```
+
+response:
+
+```json
+{
+  "payment_status_response": {
+    "network_reference": "20190808193101560-010000000020-acsp",
     "transaction_status": {
       "status": "ACSP",
       "reason": "G001"
+    }
+  }
+}
+```
+
+> Scenario 3 - RJCT
+
+Only if uetr in the request is "6c475b07-1487-46b0-839e-5b6a810e19bc"
+
+```json
+{
+  "update_payment_status_request": {
+    "from": "BANCDEFF",
+    "business_service": "001",
+    "update_payment_scenario": "CCTR",
+    "uetr": "6c475b07-1487-46b0-839e-5b6a810e19bc",
+    "instruction_identification": "sandbox-payments-chain-first-leg",
+    "payment_status": {
+      "detailed_status": {
+        "originator": "BANCDEFF",
+        "funds_available": "2018-01-01T17:00:00.000Z",
+        "transaction_status": {
+          "status": "RJCT",
+          "reason": "??" (find a reason code that match RJCT)
+        },
+        "return": false,
+        "confirmed_amount": {
+          "currency": "USD",
+          "amount": "980."
+        },
+        "charge_amount": [
+          {
+            "currency": "USD",
+            "amount": "20."
+          }
+        ]
+      }
+    }
+  }
+}
+```
+
+response:
+
+```json
+{
+  "payment_status_response": {
+    "network_reference": "20190808193101560-010000000020-rjct",
+    "transaction_status": {
+      "status": "RJCT",
+      "reason": "??"
     }
   }
 }
