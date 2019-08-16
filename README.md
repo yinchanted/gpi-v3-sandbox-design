@@ -302,7 +302,7 @@ Only if uetr in the request is "97ed4827-7b6f-4491-a06f-b548d5a7512d"
 
 > request:
 
-Only if uetr in the request is "97ed4827-7b6f-4491-a06f-cancelled" AND
+Only if uetr in the request is "97ed4827-7b6f-4491-a06f-b548d5a7512d" AND
 
 "underlying_cancellation_details": {
 "investigation_execution_status": "CNCL"
@@ -319,7 +319,7 @@ Only if uetr in the request is "97ed4827-7b6f-4491-a06f-cancelled" AND
 
 > request:
 
-Only if uetr in the request is "97ed4827-7b6f-4491-a06f-pendingforward" AND 
+Only if uetr in the request is "97ed4827-7b6f-4491-a06f-b548d5a7512d" AND 
 
 "underlying_cancellation_details": {
 "investigation_execution_status": "PDCR",
@@ -338,7 +338,7 @@ Only if uetr in the request is "97ed4827-7b6f-4491-a06f-pendingforward" AND
 
 > request:
 
-Only if uetr in the request is "97ed4827-7b6f-4491-a06f-pendingdebitauth" AND
+Only if uetr in the request is "97ed4827-7b6f-4491-a06f-b548d5a7512d" AND
 
 "underlying_cancellation_details": {
 "investigation_execution_status": "PDCR",
@@ -357,7 +357,7 @@ Only if uetr in the request is "97ed4827-7b6f-4491-a06f-pendingdebitauth" AND
 
 > request:
 
-Only if uetr in the request is "97ed4827-7b6f-4491-a06f-rejected" AND
+Only if uetr in the request is "97ed4827-7b6f-4491-a06f-b548d5a7512d" AND
 "underlying_cancellation_details": {
       "investigation_execution_status": "RJCR",
       "investigation_execution_status_reason": {
@@ -377,7 +377,7 @@ Only if uetr in the request is "97ed4827-7b6f-4491-a06f-rejected" AND
 
 > request:
 
-Only if uetr in the request is "97ed4827-7b6f-4491-a06f*" AND
+Only if uetr in the request is "97ed4827-7b6f-4491-a06f-b548d5a7512d" AND
  "cancellation_reason_information" is "CUST"
 
 > response:
@@ -391,7 +391,7 @@ Only if uetr in the request is "97ed4827-7b6f-4491-a06f*" AND
 
 > request:
 
-Only if uetr in the request is "97ed4827-7b6f-4491-a06f*" AND
+Only if uetr in the request is "97ed4827-7b6f-4491-a06f-b548d5a7512d" AND
  "cancellation_reason_information" is "DUPL"
 
 > response:
