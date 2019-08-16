@@ -311,8 +311,8 @@ Only if uetr in the request is "97ed4827-7b6f-4491-a06f-cancelled" AND
 > response:
 ```json
 {
-"cancel_transaction_response": {
-"network_reference": "20190522000128293-010000068667"
+"transaction_cancellation_status_response": {
+"network_reference": "20190522000128293-010000068667-cncl"
 }
 }
 ```
@@ -330,8 +330,8 @@ Only if uetr in the request is "97ed4827-7b6f-4491-a06f-pendingforward" AND
 > response:
 ```json
 {
-"cancel_transaction_response": {
-"network_reference": "20190522000128293-010000068667"
+"transaction_cancellation_status_response": {
+"network_reference": "20190522000128293-010000068667-ptna"
 }
 }
 ```
@@ -349,8 +349,8 @@ Only if uetr in the request is "97ed4827-7b6f-4491-a06f-pendingdebitauth" AND
 > response:
 ```json
 {
-"cancel_transaction_response": {
-"network_reference": "20190522000128293-010000068667"
+"transaction_cancellation_status_response": {
+"network_reference": "20190522000128293-010000068667-rqda"
 }
 }
 ```
@@ -367,8 +367,8 @@ Only if uetr in the request is "97ed4827-7b6f-4491-a06f-rejected" AND
 > response:
 ```json
 {
-"cancel_transaction_response": {
-"network_reference": "20190522000128293-010000068667"
+"transaction_cancellation_status_response": {
+"network_reference": "20190522000128293-010000068667-rjcr"
 }
 }
 ```
