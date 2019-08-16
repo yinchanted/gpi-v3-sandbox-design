@@ -25,11 +25,11 @@ For all dynamic responses, LAU response headers will be handled by the api gatew
 #### Required fields in request
 
 :x: from
+:x: instruction_identification
+:x: confirmed_amount
 * update_payment_scenario (return error if not one of the accepted ENUM)
 * uetr (can only be from the list of acceptable UETRs)
-:x: instruction_identification
 * payment_status->transaction_status (return response body needs to match)
-:x: confirmed_amount
 
 :question: What's the meaning of this attribute: "return"?
 
