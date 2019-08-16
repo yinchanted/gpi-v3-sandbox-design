@@ -4,14 +4,16 @@ Design solution for gpi v3 dynamic sandbox
 ## /payments/status
 For all dynamic responses, LAU response headers will be handled by the api gateway, thus out of scope in the discussion below. The following is only for the design of the response bodies. :shipit:
 
-> Errors on sandbox:
+### Errors on sandbox
 - [ ] invalid_request
 - [ ] missing_mandatory_field
 
 
-> Errors on gateway:
+### Errors on gateway
 - [ ] missing_headers
 - [ ] lau_error
+
+### Success scenarios
 
 > request:
 
