@@ -32,6 +32,7 @@ For all dynamic responses, LAU response headers will be handled by the api gatew
 - [ ] payment_status->transaction_status (return response body needs to match)
 
 :question: What's the meaning of this attribute: "return"?
+:question: What is the error response body when "uetr" provided cannot be found?
 
 > Scenario 1 - ACCC
 
