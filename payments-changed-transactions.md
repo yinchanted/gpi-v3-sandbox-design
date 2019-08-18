@@ -27,8 +27,9 @@ For all dynamic responses, LAU response headers will be handled by the api gatew
 :x: from_date_time
 :x: to_date_time
 :x: maximum_number
-- [ ] payment_scenario (return different responses for each ENUM)
 :x: next
+- [ ] payment_scenario (return different responses for each ENUM)
+
 
 > Scenario 1 - payment_scenario not set
 
