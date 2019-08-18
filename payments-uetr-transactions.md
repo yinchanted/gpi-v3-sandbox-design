@@ -17,6 +17,7 @@ For all dynamic responses, LAU response headers will be handled by the api gatew
 - [ ] service_too_many_requests (429)
 - [ ] system_too_many_requests (429)
 
+:question: For a payment transaction which is in state "ACCC", is it possible for one of the payment event to be in "ACSP"?
 
 ### Success scenarios
 
