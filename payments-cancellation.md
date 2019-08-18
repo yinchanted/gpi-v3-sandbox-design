@@ -29,8 +29,6 @@ For all dynamic responses, LAU response headers will be handled by the api gatew
 - [ ] uetr (a list of accepted uetrs)
 - [ ] underlying_cancellation_details -> cancellation_reason_information (return response body needs to match)
 
-:question: What's the meaning of this attribute: "return"?
-
 > Scenario 1 - Request to cancel a transaction with reason DUPL.
 
 request: only if uetr in the request is "6c475b07-1487-46b0-839e-5b6a810e19bc" and underlying_cancellation_details -> cancellation_reason_information is "DUPL"
