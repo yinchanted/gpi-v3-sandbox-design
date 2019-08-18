@@ -5,12 +5,12 @@ For all dynamic responses, LAU response headers will be handled by the api gatew
 
 * [/payments/status](payments-status.md)
 
-* [/payments/{uetr}/transactions](payment-uetr-transactions)
+* [/payments/{uetr}/transactions](payments-uetr-transactions)
 
-* [/payments/changed/transactions]()
+* [/payments/changed/transactions](payments-changed-transactions)
 
-* [/payments/cancellation]()
+* [/payments/cancellation](payments-cancellation)
 
-* [/payments/cancellation/status]()
+* [/payments/cancellation/status](payments-cancellation-status)
 
-* [/payments/events/invalid]()
+* [/payments/events/invalid](payments-events-invalid)
