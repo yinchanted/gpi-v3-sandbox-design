@@ -1,11 +1,6 @@
-# gpi-v3-sandbox-design
-Design solution for gpi v3 dynamic sandbox.
+# GET /payments/events/invalid
 
-For all dynamic responses, LAU response headers will be handled by the api gateway, thus out of scope in the discussion below. The following is only for the design of the response bodies. :shipit:
-
-## GET /payments/events/invalid
-
-### Errors on sandbox
+## Errors on sandbox
 - [ ] invalid_request (400)
 - [ ] missing_mandatory_field (400)
 - [ ] 500, 502, 503, 504 error response at random with uetr =  522ec102-f643-4b3c-995f-d62b7a27ec96
@@ -13,7 +8,7 @@ For all dynamic responses, LAU response headers will be handled by the api gatew
 
 :question: What error is returned if "from_date_time" is greater than "to_date_time"?
 
-### Errors on gateway
+## Errors on gateway
 - [ ] missing_headers (400)
 - [ ] lau_error (400)
 - [ ] authentication_failture (401)
@@ -22,9 +17,9 @@ For all dynamic responses, LAU response headers will be handled by the api gatew
 
 :question: What's the difference between "service_too_many_requests" vs "system_too_many_requests"?
 
-### Success scenarios
+## Success scenarios
 
-#### Required fields in request
+### Required fields in request
 
 :x: from_date_time
 :x: to_date_time
