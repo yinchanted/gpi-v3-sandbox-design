@@ -1,16 +1,11 @@
-# gpi-v3-sandbox-design
-Design solution for gpi v3 dynamic sandbox.
+# GET /payments/{uetr}/transactions
 
-For all dynamic responses, LAU response headers will be handled by the api gateway, thus out of scope in the discussion below. The following is only for the design of the response bodies. :shipit:
-
-## GET /payments/{uetr}/transactions
-
-### Errors on sandbox
+## Errors on sandbox
 - [ ] invalid_request (400)
 - [ ] missing_mandatory_field (400)
 - [ ] 500, 502, 503, 504 error response at random with uetr =  522ec102-f643-4b3c-995f-d62b7a27ec96
 
-### Errors on gateway
+## Errors on gateway
 - [ ] missing_headers (400)
 - [ ] lau_error (400)
 - [ ] authentication_failture (401)
@@ -19,9 +14,9 @@ For all dynamic responses, LAU response headers will be handled by the api gatew
 
 :question: For a payment transaction which is in state "ACCC", is it possible for one of the payment event to be in "ACSP"?
 
-### Success scenarios
+## Success scenarios
 
-#### Required fields in request
+### Required fields in request
 
 - [ ] uetr (a list of uetrs)
 
